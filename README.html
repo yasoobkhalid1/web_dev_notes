@@ -36,12 +36,24 @@
 <p><em>Tip: Use the entity codes available online (that start with an <code>&amp;</code> and end with a <code>;</code>) to render reserved or unique characters correctly.</em></p>
 <h3 id="semantic-markup">Semantic Markup</h3>
 <p>A recent development, semantic markup allows us to provide <em>meaning</em> to the tags we employ when writing HTML. For example, rather than simply using <code>div</code> as a blanket, catch-all term for all of our generalized containers, we can use various similar tags like <code>nav</code>, <code>header</code>, <code>footer</code>, etc. While they perform the exact same function as <code>div</code>, they encapuslate much greater meaning within them, which is helpful not just for human code-readability, but also SEOs and other tracking services.</p>
-<p><em>Tip: Make sure to use <strong>semantic markup</strong> to create meaningful generalized containers like <code>nav</code>, <code>header</code>, etc. rather than using the catch-all <code>div</code> tag</em></p>
+<p><em>Tip: Make sure to use <strong>semantic markup</strong> to create meaningful generalized containers like <code>nav</code>, <code>header</code>, etc. rather than using the catch-all <code>div</code> tag.</em></p>
+<h3 id="forms">Forms</h3>
+<p>When writing forms, make sure to follow best practices by using the <code>label</code> tag rather than writing your labels within a <code>span</code> or <code>p</code> tag. This is especially important because if you do it correctly, you allow the user to click on the label to get the same result as clicking on the form element itself.</p>
+<p><em>Tip: Make sure to use the <code>label</code> tag for labeling your form elements, such as <code>Username:</code> or <code>Password:</code> etc.</em></p>
+<h2 id="css">CSS</h2>
+<p>CSS allows us to style and visualize the HTML contents of our website. CSS can seem pretty daunting upfront due to how varied the number of changeable properties gets. Rather than getting lost in the weeds trying to memorize or keep track of all of them, just make sure to liberally use the MDN reference docs since they are an excellent resource to find whatever you need to know regarding CSS.</p>
+<p><em>Tip: Make sure not to implement CSS into your documents by styling inline or using the <code>style</code> element. This drastically reduces reproducibility and is considered bad practice. Almost always, use an external stylesheet that you link to your HTML document.</em></p>
 <h2 id="compiled-tips">Compiled Tips</h2>
+<h3 id="html-1">HTML</h3>
 <ul>
 <li>[<a href="#html">1</a>] A great reference guide for HTML, CSS, Javascript and other technologies is <a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network (MDN)</a>. You can use it not only for reference, but it will also provide you with best practices and common industry methodologies for specific things.</li>
 <li>[<a href="#entity-codes">2</a>] Use the entity codes available online (that start with an <code>&amp;</code> and end with a <code>;</code>) to render reserved or unique characters correctly.</li>
-<li>[<a href="#semantic-markup">3</a>] Make sure to use <strong>semantic markup</strong> to create meaningful generalized containers like <code>nav</code>, <code>header</code>, etc. rather than using the catch-all <code>div</code> tag</li>
+<li>[<a href="#semantic-markup">3</a>] Make sure to use <strong>semantic markup</strong> to create meaningful generalized containers like <code>nav</code>, <code>header</code>, etc. rather than using the catch-all <code>div</code> tag.</li>
+<li>[<a href="#forms">4</a>] Make sure to use the <code>label</code> tag for labeling your form elements, such as <code>Username:</code> or <code>Password:</code> etc.</li>
+</ul>
+<h3 id="css-1">CSS</h3>
+<ul>
+<li>[<a href="#css">5</a>] Make sure not to implement CSS into your documents by styling inline or using the <code>style</code> element. This drastically reduces reproducibility and is considered bad practice. Almost always, use an external stylesheet that you link to your HTML document.</li>
 </ul>
 
     </body>
