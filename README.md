@@ -24,6 +24,6 @@ _Tip: Make sure to use **semantic markup** to create meaningful generalized cont
 
 ## Compiled Tips
 
-- [[1]](#HTML) A great reference guide for HTML, CSS, Javascript and other technologies is [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/). You can use it not only for reference, but it will also provide you with best practices and common industry methodologies for specific things.
-- Use the entity codes available online (that start with an `&` and end with a `;`) to render reserved or unique characters correctly.
-- Make sure to use **semantic markup** to create meaningful generalized containers like `nav`, `header`, etc. rather than using the catch-all `div` tag
+- [[1](#html)] A great reference guide for HTML, CSS, Javascript and other technologies is [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/). You can use it not only for reference, but it will also provide you with best practices and common industry methodologies for specific things.
+- [[2](#entity-codes)] Use the entity codes available online (that start with an `&` and end with a `;`) to render reserved or unique characters correctly.
+- [[3](#semantic-markup)] Make sure to use **semantic markup** to create meaningful generalized containers like `nav`, `header`, etc. rather than using the catch-all `div` tag
