@@ -29,20 +29,78 @@
 <p>Disclaimer: I don't own any of this information! This wonderful course was developed by Colt Steele and all intellectual property belongs to him. I am simply creating this document for my <em>personal</em> reference, if you wish to truly learn whatever is described below, please take Colt's course.</p>
 </blockquote>
 <h2 id="1-html">1. HTML</h2>
+<ul>
+<li>
 <p>HTML deals with the <strong>structure</strong> of the web page, providing us with the content the page contains. We use <em>tags</em> to define the HTML elements we are implementing to specify the type of our content.</p>
+</li>
+<li>
 <p><em>Tip: A great reference guide for HTML, CSS, Javascript and other technologies is <a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network (MDN)</a>. You can use it not only for reference, but it will also provide you with best practices and common industry methodologies for specific things.</em></p>
+</li>
+</ul>
 <h3 id="11-entity-codes">1.1 Entity Codes</h3>
+<ul>
+<li>
 <p>When using reserved characters or unique symbols that aren't predefined (such as various emoji's), refrain from directly using the character even if they render correctly in the web browser (for example, typing <code>2 &lt; 6</code> might show up correctly in the browser but your editor and a crawler will not understand it since they will be looking for the closing bracket). Instead, use the predefined entity codes that are provided online (search for them using Google) since they will tell the web browser exactly what to display.</p>
+</li>
+<li>
 <p><em>Tip: Use the entity codes available online (that start with an <code>&amp;</code> and end with a <code>;</code>) to render reserved or unique characters correctly.</em></p>
+</li>
+</ul>
 <h3 id="12-semantic-markup">1.2 Semantic Markup</h3>
+<ul>
+<li>
 <p>A recent development, semantic markup allows us to provide <em>meaning</em> to the tags we employ when writing HTML. For example, rather than simply using <code>div</code> as a blanket, catch-all term for all of our generalized containers, we can use various similar tags like <code>nav</code>, <code>header</code>, <code>footer</code>, etc. While they perform the exact same function as <code>div</code>, they encapuslate much greater meaning within them, which is helpful not just for human code-readability, but also SEOs and other tracking services.</p>
+</li>
+<li>
 <p><em>Tip: Make sure to use <strong>semantic markup</strong> to create meaningful generalized containers like <code>nav</code>, <code>header</code>, etc. rather than using the catch-all <code>div</code> tag.</em></p>
+</li>
+</ul>
 <h3 id="13-forms">1.3 Forms</h3>
+<ul>
+<li>
 <p>When writing forms, make sure to follow best practices by using the <code>label</code> tag rather than writing your labels within a <code>span</code> or <code>p</code> tag. This is especially important because if you do it correctly, you allow the user to click on the label to get the same result as clicking on the form element itself.</p>
+</li>
+<li>
 <p><em>Tip: Make sure to use the <code>label</code> tag for labeling your form elements, such as <code>Username:</code> or <code>Password:</code> etc.</em></p>
+</li>
+</ul>
 <h2 id="2-css">2. CSS</h2>
+<ul>
+<li>
 <p>CSS allows us to style and visualize the HTML contents of our website. CSS can seem pretty daunting upfront due to how varied the number of changeable properties gets. Rather than getting lost in the weeds trying to memorize or keep track of all of them, just make sure to liberally use the MDN reference docs since they are an excellent resource to find whatever you need to know regarding CSS.</p>
+</li>
+<li>
 <p><em>Tip: Make sure not to implement CSS into your documents by styling inline or using the <code>style</code> element. This drastically reduces reproducibility and is considered bad practice. Almost always, use an external stylesheet that you link to your HTML document.</em></p>
+</li>
+</ul>
+<h3 id="21-fonts">2.1 Fonts</h3>
+<ul>
+<li>CSS has various properties that you can modify regarding your font. Most of them use various <em>units</em> to specify the amount, so it's important to understand what each of these units mean. Here are the most common ones:
+<ul>
+<li><strong>Name</strong>: Various common names like <code>large</code>, <code>x-large</code>, <code>medium</code>, etc. which generally aren't used due to a lack of granularity</li>
+<li><strong>Pixel</strong>: By far the most commonly used absolute unit. 10px in one part of your page will be the exact same as 10x in another part. However, they are not recommended for responsive websites.</li>
+<li><strong>Em</strong>:</li>
+<li><strong>Percentage</strong>:</li>
+<li>and many other relative (em, rem, vh, vw, %, etc.) and absolute (px, pt, cm, in, mm) measurement units</li>
+</ul>
+</li>
+<li>If you aren't specifying any custom fonts and linking them to your document, check the availability of the browser font you have chosen <a href="https://www.cssfontstack.com/">here</a> and choose a widely available one.</li>
+<li><em>Tip: When using browser fonts rather than custom fonts, make sure to specify a <strong>font stack</strong> so that your browser has fall-back options if the preferred choice is unavailable.</em></li>
+</ul>
+<h3 id="22-selectors">2.2 Selectors</h3>
+<ul>
+<li>There are various selectors you can use to let the browser know which specific content you want styled a certain way in CSS. Here are the most common ones:
+<ul>
+<li><strong>Element</strong>: This selects all the content with the same element (e.g. <code>img</code> selects all images)</li>
+<li><strong>ID</strong>: Select the element with a specific ID (e.g. <code>#logout</code> selects element with ID <code>logout</code>). Make sure that there is only one ID in a page (since it's a unique identifier for a specific element)</li>
+<li><strong>Class</strong>: One of the most commonly used, selects all elements with a specific class (e.g. <code>.complete</code> selects all elements with class <code>complete</code>). We can apply class to multiple elements to group them together. Use IDs judiciously (only a handful per page).</li>
+<li><strong>Descendants</strong>: Using <code>li a</code> selects all <code>&lt;a&gt;</code> that are nested within an <code>&lt;li&gt;</code>. Different from using a comma, <em>no</em> <code>&lt;li&gt;</code> tag itself will be styled, only the nested anchor tags within them.</li>
+<li><strong>Attributes</strong>: Selecting elements based on their attributes (e.g. <code>input[type='text']</code> selects all inputs that are set to the text attribute).</li>
+<li><strong>Pseudo-Classes</strong>: Keyword added to a selector to specify a special state of the selected elements (e.g. <code>a:hover</code> selects all anchor tags when they are being hovered over).</li>
+<li>We can select multiple things by using commas (e.g. <code>h1, h2</code> selects all h1 and h2 headings)</li>
+</ul>
+</li>
+</ul>
 <h2 id="3-compiled-tips">3. Compiled Tips</h2>
 <h3 id="31-html">3.1 HTML</h3>
 <ul>
@@ -54,6 +112,7 @@
 <h3 id="32-css">3.2 CSS</h3>
 <ul>
 <li>[<a href="#2-css">5</a>] Make sure not to implement CSS into your documents by styling inline or using the <code>style</code> element. This drastically reduces reproducibility and is considered bad practice. Almost always, use an external stylesheet that you link to your HTML document.</li>
+<li>[<a href="#21-fonts">6</a>] When using browser fonts rather than custom fonts, make sure to specify a <strong>font stack</strong> so that your browser has fall-back options if the preferred choice is unavailable</li>
 </ul>
 
     </body>
