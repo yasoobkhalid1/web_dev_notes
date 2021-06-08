@@ -79,9 +79,10 @@
 <ul>
 <li><strong>Name</strong>: Various common names like <code>large</code>, <code>x-large</code>, <code>medium</code>, etc. which generally aren't used due to a lack of granularity</li>
 <li><strong>Pixel</strong>: By far the most commonly used absolute unit. 10px in one part of your page will be the exact same as 10x in another part. However, they are not recommended for responsive websites.</li>
-<li><strong>Em</strong>:</li>
-<li><strong>Percentage</strong>:</li>
-<li>and many other relative (em, rem, vh, vw, %, etc.) and absolute (px, pt, cm, in, mm) measurement units</li>
+<li><strong>Em</strong>: Relative unit. With font-size, 1em equals font-size of the parent. 2em is twice, etc. With other properties, 1em is equal to the computed font-size of the element itself.</li>
+<li><strong>Rems</strong>: Root ems, relative unit. Relative to the root html element's font-size. Often easier to work with (especially in nested tags where ems can grow very fast).</li>
+<li><strong>Percentage</strong>: Percentage value is always relative to some other value. Sometimes, it's a value from the parent (<code>width: 50%</code> is half the width of the parent) while other times it's a value from the element itself (<code>line-height: 50%</code> is half the font-size of the element itself)</li>
+<li>and many other relative (vh, vw, etc.) and absolute (pt, cm, in, mm) measurement units</li>
 </ul>
 </li>
 <li>If you aren't specifying any custom fonts and linking them to your document, check the availability of the browser font you have chosen <a href="https://www.cssfontstack.com/">here</a> and choose a widely available one.</li>
@@ -101,6 +102,32 @@
 </ul>
 </li>
 </ul>
+<h3 id="23-specificity">2.3 Specificity</h3>
+<ul>
+<li>Specificity helps us understand what happens when we have conflicting styles targeting the same elements in our CSS document. It measures how specific a given selector is. The more specific selector wins and has its style implemented.</li>
+<li>Here's the general formula for how specific the selector is, in descending order: <code>ID &gt; Class/Attribute/Pseudo-Class &gt; Element/Pseudo-Element</code>.</li>
+<li>Moreover, when two selectors are tied for specificity, be aware that the selector that comes <em>later</em> will be chosen.</li>
+<li>Generally, you can 'eyeball' the specificity of your selector, but if you're confused and want to observe the actual formula to compare, <a href="https://specificity.keegan.st/">here</a> is a good resource that calculates it for you.</li>
+<li>You can use the important tag like this <code>color:firebrick !important</code> to indicate to the browser that this is <em>the</em> most important thing and should be prioritized above all selectors. It is generally not recommended to use the important tag.</li>
+<li><em>Tip: Make sure to use Chrome's Inspect tool to observe the order of specificity for an element.</em></li>
+</ul>
+<h3 id="24-css-box-model">2.4 CSS Box Model</h3>
+<ul>
+<li>The CSS box model is the idea that everything in CSS is a box. It consists of the inner <strong>content box</strong>, followed by <strong>padding</strong>, then the <strong>border</strong>, and lastly the <strong>margin</strong>.</li>
+<li>For borders, we generally use pixels as our unit since a border is typically small so we can choose an absolute unit to measure it.</li>
+<li>Be aware that you can use the <code>border</code> shorthand property to set the width, style, and color in one go rather than using individual properties for each of them.</li>
+<li>Since the <code>body</code> has a default margin of <code>margin: 8px;</code> you might want to start your work by setting that to <code>0</code> so that you don't have a slight whitespace around your whole website.</li>
+<li><strong>Display Property:</strong> We can use the display property to set in-line elements to act like block elements and vice versa.
+<ul>
+<li><strong>Inline:</strong> Width/Height are ignored. Margin/Padding work horizontally but not vertically.</li>
+<li><strong>Block:</strong> Breaks document flow. Width/Height/Margin/Padding all work.</li>
+<li><strong>Inline-Block:</strong> Behaves like inline but Width/Height/Margin/Padding all work (so rather than having 3 blocks - each on their own line - we have three blocks next to each other with all properties holding)</li>
+</ul>
+</li>
+<li><strong>Position Property:</strong> We can use the position property to change the position of the element based on how we used the <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code> tags. The default position for elements is <code>static</code>. For example, you can use the <code>fixed</code> position to create a navbar that moves as you scroll the document.</li>
+<li><strong>Transitions:</strong> We can introduce transitions to smooth the process of changing our element from one form to another (such as taking 1s to <code>hover</code> rather than immediately switching to the hovered state). You can use <a href="https://easings.net/">this</a> site to find some common timing functions.</li>
+<li><strong>Transforms:</strong> We can use transforms to perform various transformations on our elements (such as rotating cards, scaling buttons/elements, etc.)</li>
+</ul>
 <h2 id="3-compiled-tips">3. Compiled Tips</h2>
 <h3 id="31-html">3.1 HTML</h3>
 <ul>
@@ -113,6 +140,7 @@
 <ul>
 <li>[<a href="#2-css">5</a>] Make sure not to implement CSS into your documents by styling inline or using the <code>style</code> element. This drastically reduces reproducibility and is considered bad practice. Almost always, use an external stylesheet that you link to your HTML document.</li>
 <li>[<a href="#21-fonts">6</a>] When using browser fonts rather than custom fonts, make sure to specify a <strong>font stack</strong> so that your browser has fall-back options if the preferred choice is unavailable</li>
+<li>[<a href="#23-specificity">7</a>] Make sure to use Chrome's Inspect tool to observe the order of specificity for an element.</li>
 </ul>
 
     </body>
