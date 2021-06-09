@@ -1,8 +1,24 @@
-# Web Development Bootcamp
+# Web Development Bootcamp <!-- omit in toc -->
 
 Personal notes taken from [The Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/) by Colt Steele. I wrote this while taking the bootcamp to reinforce my learning and to develop a single repository that contained all the important information, summarized for my reference.
 
 > Disclaimer: I don't own any of this information! This wonderful course was developed by Colt Steele and all intellectual property belongs to him. I am simply creating this document for my _personal_ reference, if you wish to truly learn whatever is described below, please take Colt's course.
+
+- [1. HTML](#1-html)
+  - [1.1 Entity Codes](#11-entity-codes)
+  - [1.2 Semantic Markup](#12-semantic-markup)
+  - [1.3 Forms](#13-forms)
+- [2. CSS](#2-css)
+  - [2.1 Fonts](#21-fonts)
+  - [2.2 Selectors](#22-selectors)
+  - [2.3 Specificity](#23-specificity)
+  - [2.4 CSS Box Model](#24-css-box-model)
+  - [2.5 FlexBox](#25-flexbox)
+  - [2.6 Responsive Design & Media Queries](#26-responsive-design--media-queries)
+  - [2.7 Bootstrap](#27-bootstrap)
+- [3. Compiled Tips](#3-compiled-tips)
+  - [3.1 HTML](#31-html)
+  - [3.2 CSS](#32-css)
 
 ## 1. HTML
 
@@ -79,6 +95,26 @@ Personal notes taken from [The Web Developer Bootcamp](https://www.udemy.com/cou
 - **Position Property:** We can use the position property to change the position of the element based on how we used the `top`, `bottom`, `left`, and `right` tags. The default position for elements is `static`. For example, you can use the `fixed` position to create a navbar that moves as you scroll the document.
 - **Transitions:** We can introduce transitions to smooth the process of changing our element from one form to another (such as taking 1s to `hover` rather than immediately switching to the hovered state). You can use [this](https://easings.net/) site to find some common timing functions.
 - **Transforms:** We can use transforms to perform various transformations on our elements (such as rotating cards, scaling buttons/elements, etc.)
+- _Tip: Consider using a CSS Reset like [here](https://meyerweb.com/eric/tools/css/reset/) to get rid of all the pre-provided styling built-in to the browser. This makes sure you start with a completely blank slate._
+
+### 2.5 FlexBox
+
+- Flexbox is a recent addition to CSS that allows us to layout items in a page. Rather than hardcoding values to arrange items inside containers, we can dynamically lay them out using FlexBox to ensure that the spacing adjusts as our screen gets resized
+- When we set a container to use Flexbox (by setting `display: flex;`), our container has two axes: the main axis (default is left to right) and the cross axis (default is top to bot).
+  - **Main Axis:** We space our content along the main axis using `justify-content`
+  - **Cross Axis:** We space our content along the cross axis using `align-items`. `flex-wrap` changes the direction of the cross axis.
+- We can also dynamically change the size of the content in our container using `flex-basis`, `flex-grow`, `flex-shrink`
+
+### 2.6 Responsive Design & Media Queries
+
+- The goal is to create a single device that looks good for all screens (from small phone screens to large monitors).
+- **Media Queries:** These allow us to change our style or add new styles depending on specific parameters (most commonly, screen width or device type).
+- _Tip: Use Chrome Dev Tools `Toggle Device` button to view your website in different sizes to make sure it's responsive and looks good for all of them._
+- We can add media queries using `@media` followed by the property we want to observe. E.g. `@media (max-width: 800px) { styles }`
+
+### 2.7 Bootstrap
+
+- Bootstrap is a really popular CSS framework, that allows you to quickly create nice-looking, modern websites by providing you with **prebuilt components** (that you can include in your own website) and a **grid system** (that helps you construct your own custom, responsive layout)
 
 ## 3. Compiled Tips
 
@@ -94,3 +130,5 @@ Personal notes taken from [The Web Developer Bootcamp](https://www.udemy.com/cou
 - [[5](#2-css)] Make sure not to implement CSS into your documents by styling inline or using the `style` element. This drastically reduces reproducibility and is considered bad practice. Almost always, use an external stylesheet that you link to your HTML document.
 - [[6](#21-fonts)] When using browser fonts rather than custom fonts, make sure to specify a **font stack** so that your browser has fall-back options if the preferred choice is unavailable
 - [[7](#23-specificity)] Make sure to use Chrome's Inspect tool to observe the order of specificity for an element.
+- [[8](#24-css-box-model)] Consider using a CSS Reset like [here](https://meyerweb.com/eric/tools/css/reset/) to get rid of all the pre-provided styling built-in to the browser. This makes sure you start with a completely blank slate.
+- [[9](#26-responsive-design--media-queries)] Use Chrome Dev Tools `Toggle Device` button to view your website in different sizes to make sure it's responsive and looks good for all of them.

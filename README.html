@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Web Development Bootcamp</title>
+        <title>Web Development Bootcamp &lt;&excl;-- omit in toc --&gt;</title>
         <style>
 </style>
         
@@ -23,11 +23,37 @@
         
     </head>
     <body class="vscode-body">
-        <h1 id="web-development-bootcamp">Web Development Bootcamp</h1>
+        <h1 id="web-development-bootcamp-">Web Development Bootcamp <!-- omit in toc --></h1>
 <p>Personal notes taken from <a href="https://www.udemy.com/course/the-web-developer-bootcamp/">The Web Developer Bootcamp</a> by Colt Steele. I wrote this while taking the bootcamp to reinforce my learning and to develop a single repository that contained all the important information, summarized for my reference.</p>
 <blockquote>
 <p>Disclaimer: I don't own any of this information! This wonderful course was developed by Colt Steele and all intellectual property belongs to him. I am simply creating this document for my <em>personal</em> reference, if you wish to truly learn whatever is described below, please take Colt's course.</p>
 </blockquote>
+<ul>
+<li><a href="#1-html">1. HTML</a>
+<ul>
+<li><a href="#11-entity-codes">1.1 Entity Codes</a></li>
+<li><a href="#12-semantic-markup">1.2 Semantic Markup</a></li>
+<li><a href="#13-forms">1.3 Forms</a></li>
+</ul>
+</li>
+<li><a href="#2-css">2. CSS</a>
+<ul>
+<li><a href="#21-fonts">2.1 Fonts</a></li>
+<li><a href="#22-selectors">2.2 Selectors</a></li>
+<li><a href="#23-specificity">2.3 Specificity</a></li>
+<li><a href="#24-css-box-model">2.4 CSS Box Model</a></li>
+<li><a href="#25-flexbox">2.5 FlexBox</a></li>
+<li><a href="#26-responsive-design--media-queries">2.6 Responsive Design &amp; Media Queries</a></li>
+<li><a href="#27-bootstrap">2.7 Bootstrap</a></li>
+</ul>
+</li>
+<li><a href="#3-compiled-tips">3. Compiled Tips</a>
+<ul>
+<li><a href="#31-html">3.1 HTML</a></li>
+<li><a href="#32-css">3.2 CSS</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="1-html">1. HTML</h2>
 <ul>
 <li>
@@ -127,6 +153,29 @@
 <li><strong>Position Property:</strong> We can use the position property to change the position of the element based on how we used the <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code> tags. The default position for elements is <code>static</code>. For example, you can use the <code>fixed</code> position to create a navbar that moves as you scroll the document.</li>
 <li><strong>Transitions:</strong> We can introduce transitions to smooth the process of changing our element from one form to another (such as taking 1s to <code>hover</code> rather than immediately switching to the hovered state). You can use <a href="https://easings.net/">this</a> site to find some common timing functions.</li>
 <li><strong>Transforms:</strong> We can use transforms to perform various transformations on our elements (such as rotating cards, scaling buttons/elements, etc.)</li>
+<li><em>Tip: Consider using a CSS Reset like <a href="https://meyerweb.com/eric/tools/css/reset/">here</a> to get rid of all the pre-provided styling built-in to the browser. This makes sure you start with a completely blank slate.</em></li>
+</ul>
+<h3 id="25-flexbox">2.5 FlexBox</h3>
+<ul>
+<li>Flexbox is a recent addition to CSS that allows us to layout items in a page. Rather than hardcoding values to arrange items inside containers, we can dynamically lay them out using FlexBox to ensure that the spacing adjusts as our screen gets resized</li>
+<li>When we set a container to use Flexbox (by setting <code>display: flex;</code>), our container has two axes: the main axis (default is left to right) and the cross axis (default is top to bot).
+<ul>
+<li><strong>Main Axis:</strong> We space our content along the main axis using <code>justify-content</code></li>
+<li><strong>Cross Axis:</strong> We space our content along the cross axis using <code>align-items</code>. <code>flex-wrap</code> changes the direction of the cross axis.</li>
+</ul>
+</li>
+<li>We can also dynamically change the size of the content in our container using <code>flex-basis</code>, <code>flex-grow</code>, <code>flex-shrink</code></li>
+</ul>
+<h3 id="26-responsive-design--media-queries">2.6 Responsive Design &amp; Media Queries</h3>
+<ul>
+<li>The goal is to create a single device that looks good for all screens (from small phone screens to large monitors).</li>
+<li><strong>Media Queries:</strong> These allow us to change our style or add new styles depending on specific parameters (most commonly, screen width or device type).</li>
+<li><em>Tip: Use Chrome Dev Tools <code>Toggle Device</code> button to view your website in different sizes to make sure it's responsive and looks good for all of them.</em></li>
+<li>We can add media queries using <code>@media</code> followed by the property we want to observe. E.g. <code>@media (max-width: 800px) { styles }</code></li>
+</ul>
+<h3 id="27-bootstrap">2.7 Bootstrap</h3>
+<ul>
+<li>Bootstrap is a really popular CSS framework, that allows you to quickly create nice-looking, modern websites by providing you with <strong>prebuilt components</strong> (that you can include in your own website) and a <strong>grid system</strong> (that helps you construct your own custom, responsive layout)</li>
 </ul>
 <h2 id="3-compiled-tips">3. Compiled Tips</h2>
 <h3 id="31-html">3.1 HTML</h3>
@@ -141,6 +190,8 @@
 <li>[<a href="#2-css">5</a>] Make sure not to implement CSS into your documents by styling inline or using the <code>style</code> element. This drastically reduces reproducibility and is considered bad practice. Almost always, use an external stylesheet that you link to your HTML document.</li>
 <li>[<a href="#21-fonts">6</a>] When using browser fonts rather than custom fonts, make sure to specify a <strong>font stack</strong> so that your browser has fall-back options if the preferred choice is unavailable</li>
 <li>[<a href="#23-specificity">7</a>] Make sure to use Chrome's Inspect tool to observe the order of specificity for an element.</li>
+<li>[<a href="#24-css-box-model">8</a>] Consider using a CSS Reset like <a href="https://meyerweb.com/eric/tools/css/reset/">here</a> to get rid of all the pre-provided styling built-in to the browser. This makes sure you start with a completely blank slate.</li>
+<li>[<a href="#26-responsive-design--media-queries">9</a>] Use Chrome Dev Tools <code>Toggle Device</code> button to view your website in different sizes to make sure it's responsive and looks good for all of them.</li>
 </ul>
 
     </body>
